@@ -76,8 +76,6 @@ function mostrarPokemonesEnPantalla() {
             $renglon2.appendChild($cuadroNuevo);
         }
     }
-
-    reload();
 }
 
 const $botonSiguiente = document.querySelector("#boton-siguiente");
