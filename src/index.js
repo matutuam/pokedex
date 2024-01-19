@@ -52,7 +52,8 @@ function mostrarPokemonesEnPantalla() {
     const $renglon2 = document.querySelector("#renglon-2");
 
     for(let i = 0; i < 6; i++) {
-        const pokemonRecuperado = JSON.parse(localStorage.getItem(`${indicePokemones += 1}`));
+        indicePokemones++;
+        const pokemonRecuperado = JSON.parse(localStorage.getItem(`${indicePokemones}`));
 
         const nombrePokemon = pokemonRecuperado.name;
 
