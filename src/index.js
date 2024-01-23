@@ -58,7 +58,8 @@ function mostrarPokemonesEnPantalla() {
         const nombrePokemon = pokemonRecuperado.name;
 
         const $cuadroNuevo = document.createElement("div");
-        $cuadroNuevo.classList = "col cuadro";
+        $cuadroNuevo.id = `${pokemonRecuperado.id}`;
+        $cuadroNuevo.classList = "col cuadro pokemon";
 
         const $img = document.createElement("img");
         $img.src = pokemonRecuperado.sprite;
@@ -69,6 +70,8 @@ function mostrarPokemonesEnPantalla() {
         $cuadroNuevo.appendChild($img);
         $cuadroNuevo.appendChild($h4);
 
+        $cuadroNuevo.addEventListener("click", mostrarInformacionPokemon);
+
         if (i <= 2) {
             $renglon1.appendChild($cuadroNuevo);
         }
@@ -76,6 +79,59 @@ function mostrarPokemonesEnPantalla() {
         if (i >= 3) {
             $renglon2.appendChild($cuadroNuevo);
         }
+    }
+}
+
+function mostrarInformacionPokemon(e) {
+    let pokemonMostrado = e.target;
+
+    if (pokemonMostrado != "div") {
+        pokemonMostrado = e.target.parentNode;
+    }
+
+    const pokemonRecuperado = JSON.parse(localStorage.getItem(`${pokemonMostrado.id}`));
+
+    if (pokemonRecuperado === null) {
+        return;
+    }
+
+    abrirModal();
+
+    const nombrePokemon = pokemonRecuperado.name;
+
+    const $img = document.createElement("img");
+    $img.src = pokemonRecuperado.sprite;
+
+    const $contenedorPokemon = document.querySelector("#contenedor-img");
+    $contenedorPokemon.appendChild($img);
+
+    document.querySelector("#nombre-pokemon").textContent = nombrePokemon.charAt(0).toUpperCase() + nombrePokemon.slice(1);
+    document.querySelector("#altura-pokemon").textContent = `${pokemonRecuperado.height}`;
+    document.querySelector("#peso-pokemon").textContent = `${pokemonRecuperado.weight}`;
+    document.querySelector("#experiencia-pokemon").textContent = `${pokemonRecuperado.experience}`;
+}
+
+const $modal = document.querySelector(".modal");
+$modal.addEventListener("click", cerrarModal);
+
+function abrirModal() {
+    document.querySelector(".modal").classList.remove("oculto");
+
+    const $cuadros = document.querySelectorAll(".pokemon");
+    
+    for (let i = 0; i < $cuadros.length; i++) {
+        $cuadros[i].removeEventListener("click", mostrarInformacionPokemon);
+    }
+}
+
+function cerrarModal() {
+    document.querySelector(".modal").classList.add("oculto");
+    document.querySelector("#contenedor-img img").remove();
+    
+    const $cuadros = document.querySelectorAll(".pokemon");
+
+    for (let i = 0; i < $cuadros.length; i++) {
+        $cuadros[i].addEventListener("click", mostrarInformacionPokemon);
     }
 }
 
