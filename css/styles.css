@@ -73,3 +73,51 @@ h4 {
     font-weight: 600;
     text-align: center;
 }
+
+.modal {
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    border-radius: 5px;
+    transition: 0.5s;
+    height: 50%;
+    width: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.modal span {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.oculto {
+    display: none;
+}
+
+.pokemon{
+    cursor: pointer;
+}
+
+.modal col {
+    display: inline-block;
+}
+
+p {
+    display: inline-block;
+}
+
+#detalles {
+    text-align: left;
+}
+
+#contenedor-img img {
+    border: 2px solid black;
+}
