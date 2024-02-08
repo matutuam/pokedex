@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.cuadro {
+    display: inline-block;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 250px;
+    height: 250px;
+}
+
+.cuadro:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.col {
+    margin: 5px;    
+}
+
+img {
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.btn-toolbar {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    margin: 10px;
+    width: 100px;
+}
+
+header {
+    margin: 0;
+    max-width: 100%;
+    height: 50px;
+    background-color: rgb(248, 78, 78);
+    display: flex;
+    justify-content: center;
+}
+
+#pokemon-logo {
+    margin: 0;
+    width: 120px;
+    height: 50px;
+}
+
+body {
+    background-color: rgb(241, 241, 241);
+}
+
+main {
+    margin: 5px;
+}
+
+h4 {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+    text-align: center;
+}
+
+.modal {
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    border-radius: 5px;
+    transition: 0.5s;
+    height: 50%;
+    width: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.modal span {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.oculto {
+    display: none;
+}
+
+.pokemon{
+    cursor: pointer;
+}
+
+.modal col {
+    display: inline-block;
+}
+
+p {
+    display: inline-block;
+}
+
+#detalles {
+    text-align: left;
+}
+
+#contenedor-img img {
+    border: 2px solid black;
+}
+
+@media only screen and (max-width: 600px) {
+    .modal {
+        width: fit-content;
+        height: fit-content;
+    }
+
+    .cuadro {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    #contenedor-pokemones {
+        margin: 15px;
+        padding: 10px
+    }
+}

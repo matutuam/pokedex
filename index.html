@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pokédex</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+
+    <body onload="recargarPagina()">
+
+        <header>
+            <a href=""><img src="https://www.cdnlogo.com/logos/p/81/pokemon.svg" id="pokemon-logo"></a>
+        </header>
+
+        <main>
+            <div class="container rounded">
+                <ul id="contenedor-pokemones"></ul>
+            </div>
+
+            <div class="modal oculto">
+                <span class="close">&times;</span>
+                <div class="col">
+                    <div id="info-pokemon">
+                        <h4 id="detalles">Detalles</h4>
+                        <div>
+                            <p>Nombre: </p> <em id="nombre-pokemon"></em>
+                        </div>
+                        <div>
+                            <p>Altura: </p> <em id="altura-pokemon"></em>
+                        </div>
+                        <div>
+                            <p>Peso: </p> <em id="peso-pokemon"></em>
+                        </div>
+                        <div>
+                            <p>Experiencia: </p> <em id="experiencia-pokemon"></em>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div id="contenedor-img"></div>
+                </div>
+            </div>
+
+            <div class="btn-toolbar" role="toolbar">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary" id="boton-atras">Atrás</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary" id="boton-siguiente">Siguiente</button>
+                </div>
+            </div>
+        </main>
+
+        <script>
+            function recargarPagina() {
+                if (!sessionStorage.getItem("isFirstVisit")) {
+                    sessionStorage.setItem("isFirstVisit", "true");
+                    location.reload();
+                }
+            }
+        </script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="src/index.js"></script>
+    </body>
+</html>
