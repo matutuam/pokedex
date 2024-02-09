@@ -4,8 +4,10 @@ import { mostrarInformacionPokemon } from "./ui/modalInformacion.js";
 window.indicePagina = 1;
 window.indicePokemones = 0;
 
+export const POKEMONES_MOSTRADOS = 20;
+
 export function mostrarPokemones() {
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < POKEMONES_MOSTRADOS; i++) {
         crearContenedorPokemon();
     }
 }
@@ -32,6 +34,4 @@ function crearContenedorPokemon() {
     $contenedorPokemones.appendChild($liPokemon);
 
     $liPokemon.addEventListener("click", mostrarInformacionPokemon);
-
-    console.log(window.indicePokemones);
 }

@@ -1,4 +1,5 @@
 import { mostrarPokemones } from "../utilidadesPokemon.js";
+import { POKEMONES_MOSTRADOS } from "../utilidadesPokemon.js";
 
 const $botonSiguiente = document.querySelector("#boton-siguiente");
 $botonSiguiente.onclick = mostrarPokemonesSiguientes;
@@ -14,12 +15,12 @@ const $botonAtras = document.querySelector("#boton-atras");
 $botonAtras.onclick = mostrarPokemonesAnteriores;
 
 export function mostrarPokemonesAnteriores() {
-    if (document.querySelector("#contenedor-pokemones li:last-child").id === "20" || window.indicePagina === 1) {
+    if (document.querySelector("#contenedor-pokemones li:last-child").id === `${POKEMONES_MOSTRADOS}` || window.indicePagina === 1) {
         return false;
     }
     
     window.indicePagina--;
-    window.indicePokemones -= 40;
+    window.indicePokemones -= POKEMONES_MOSTRADOS * 2;
 
     borrarPokemonesAnteriores();
     mostrarPokemones();
@@ -28,7 +29,7 @@ export function mostrarPokemonesAnteriores() {
 function borrarPokemonesAnteriores() {
     const $cuadros = document.querySelectorAll(".cuadro");
 
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < POKEMONES_MOSTRADOS; i++) {
         $cuadros[i].remove();
     }
 }
