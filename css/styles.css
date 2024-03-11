@@ -47,6 +47,7 @@ p {
     justify-content: center;
     border-radius: 10px;
     background-color: transparent;
+    margin-bottom: 50px;
 }
 
 button {
@@ -54,9 +55,27 @@ button {
     width: 40px;
     height: 40px;
     border-radius: 10px;
-    background-color: transparent;
-    color: black;
+    background-color: rgb(248, 78, 78);
+    color: white;
     border: 1px solid rgb(248, 78, 78);
+}
+
+#boton-atras,
+#boton-siguiente {
+    margin: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 20px;
+}
+
+#boton-atras {
+    left: calc(50% - 50px);
+}
+
+#boton-siguiente {
+    right: calc(50% - 50px);
 }
 
 header {
