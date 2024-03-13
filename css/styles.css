@@ -111,18 +111,19 @@ h4 {
 
 .modal {
     display: flex;
-    position: fixed;
+    flex-direction: column;
     top: 50%;
     left: 50%;
     border-radius: 5px;
     transition: 0.5s;
-    height: 50%;
-    width: 50%;
+    height: 450px;
+    width: 450px;
     transform: translate(-50%, -50%);
     background-color: white;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    overflow: hidden;
 }
 
 .modal span {
@@ -131,6 +132,11 @@ h4 {
     right: 10px;
     font-size: 20px;
     cursor: pointer;
+}
+
+.modal img {
+    height: 200px;
+    width: 200px;
 }
 
 .oculto {
@@ -150,11 +156,10 @@ p {
 }
 
 #detalles {
+    display: inline-block;
+    vertical-align: middle;
     text-align: left;
-}
-
-#contenedor-img img {
-    border: 2px solid black;
+    margin: -1px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -172,4 +177,8 @@ p {
         margin: 15px;
         padding: 10px
     }
+}
+
+svg {
+    vertical-align: middle;
 }
