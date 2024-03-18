@@ -1,5 +1,6 @@
 import { mostrarPokemones } from "../utilidadesPokemon.js";
 import { POKEMONES_MOSTRADOS } from "../utilidadesPokemon.js";
+import { actualizarNumeroPaginaActual } from "./contadorPagina.js";
 
 const $botonSiguiente = document.querySelector("#boton-siguiente");
 $botonSiguiente.onclick = mostrarPokemonesSiguientes;
@@ -7,6 +8,7 @@ $botonSiguiente.onclick = mostrarPokemonesSiguientes;
 export function mostrarPokemonesSiguientes() {
     window.indicePagina++;
 
+    actualizarNumeroPaginaActual();
     borrarPokemonesAnteriores();
     mostrarPokemones();
 }
@@ -22,6 +24,7 @@ export function mostrarPokemonesAnteriores() {
     window.indicePagina--;
     window.indicePokemones -= POKEMONES_MOSTRADOS * 2;
 
+    actualizarNumeroPaginaActual();
     borrarPokemonesAnteriores();
     mostrarPokemones();
 }
