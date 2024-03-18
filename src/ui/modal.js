@@ -1,10 +1,12 @@
-import { mostrarInformacionPokemon } from "../ui/modalInformacion.js";
+import { mostrarInformacionPokemon, mostrarLoader } from "../ui/modalInformacion.js";
 
 const $modal = document.querySelector(".close");
 $modal.addEventListener("click", cerrarModal);
 
 export function abrirModal() {
     document.querySelector(".modal").classList.remove("oculto");
+    
+    mostrarLoader();
 
     const $cuadrosPokemones = document.querySelectorAll("li");
     

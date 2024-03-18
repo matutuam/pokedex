@@ -1,5 +1,5 @@
 import { linksPokemones } from "./api/procesarInformacionAPI.js";
-import { mostrarInformacionPokemon } from "./ui/modalInformacion.js";
+import { mostrarInformacionPokemon, mostrarLoader } from "./ui/modalInformacion.js";
 
 window.indicePagina = 1;
 window.indicePokemones = 0;
@@ -22,6 +22,8 @@ function crearContenedorPokemon() {
     const $liPokemon = document.createElement("li");
     $liPokemon.id = `${linksPokemones[window.indicePokemones - 1].id}`;
     $liPokemon.classList = "col cuadro pokemon";
+
+    mostrarLoader();
 
     const $img = document.createElement("img");
     $img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${window.indicePokemones}.png`;

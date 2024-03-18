@@ -18,8 +18,12 @@ export function mostrarInformacionPokemon(e) {
             const $img = document.createElement("img");
             $img.src = dataPokemon.sprites.other.dream_world.front_default;
 
+            mostrarLoader();
+
             const $contenedorPokemon = document.querySelector("#contenedor-img");
             $contenedorPokemon.appendChild($img);
+
+            ocultarLoader();
 
             document.querySelector("#nombre-pokemon").textContent = nombrePokemon.charAt(0).toUpperCase() + nombrePokemon.slice(1);
             document.querySelector("#altura-pokemon").textContent = `${dataPokemon.height}`;
@@ -27,6 +31,15 @@ export function mostrarInformacionPokemon(e) {
             document.querySelector("#experiencia-pokemon").textContent = `${dataPokemon.base_experience}`;
         })
         .catch(error => {console.error("Error al obtener datos:", error)})
-
     abrirModal();
+}
+
+export function mostrarLoader() {
+    const $loader = document.querySelector(".loader");
+    $loader.style.display = "block";
+}
+
+export function ocultarLoader() {
+    const $loader = document.querySelector(".loader");
+    $loader.style.display = "none";
 }
