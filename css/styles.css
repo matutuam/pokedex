@@ -198,14 +198,6 @@ p {
         margin: 15px;
         padding: 10px
     }
-
-    #boton-atras {
-        left: calc(50% - 81px);
-    }
-
-    #boton-siguiente {
-        right: calc(50% - 85px);
-    }
 }
 
 svg {
