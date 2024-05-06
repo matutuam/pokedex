@@ -6,10 +6,8 @@ export function handleButtonClick(event) {
   removePreviousPokemonList();
 
   if ($clickedButton.id === "previous-button") {
-    window.limit -= 20;
     window.offset -= 20;
   } else if ($clickedButton.id === "next-button") {
-    window.limit += 20;
     window.offset += 20;
   }
 
