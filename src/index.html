@@ -111,12 +111,13 @@
           <hr class="m-2 border-t-2 border-gray-300">
           <div class="flex justify-center">
             <!-- Placeholder for Pokémon Sprite -->
-            <img id="pokemon-sprite" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="" class="mb-4 w-24 block self-center m-4">
+            <img id="loading-sprite" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" alt="" class="mb-4 w-10 block self-center m-4 animate-spin ">
+            <img id="pokemon-sprite" src="" class="mb-4 w-24 self-center m-4 hidden">
           </div>      
           <hr class="m-2 border-t-2 border-gray-300">
             <!-- Placeholder for Pokémon Details -->
             <div class="flex flex-col justify-center text-center">
-              <strong id="pokemon-name" class="text-slate-950"></strong>
+              <strong id="pokemon-name" class="text-slate-950">Select any Pokémon</strong>
               <span id="pokemon-id" class="text-slate-600"></span>
             </div>
             <hr class="m-2 border-t-2 border-gray-300">
@@ -124,15 +125,15 @@
             <div>
               <p class="text-xs text-gray-600">HP</p>
               <div class="w-full bg-gray-200 rounded-md mb-2">
-                <div id="pokemon-hp" class="h-2 bg-green-500 rounded-md" style="width: 50%;"></div>
+                <div id="pokemon-hp" class="h-2 bg-green-500 rounded-md" style="width: 0%;"></div>
               </div>
               <p class="text-xs text-gray-600">Attack</p>
               <div class="w-full bg-gray-200 rounded-md mb-2">
-                <div id="pokemon-attack" class="h-2 bg-yellow-500 rounded-md" style="width: 70%;"></div>
+                <div id="pokemon-attack" class="h-2 bg-yellow-500 rounded-md" style="width: 0%;"></div>
               </div>
               <p class="text-xs text-gray-600">Defence</p>
               <div class="w-full bg-gray-200 rounded-md mb-2">
-                <div id="pokemon-defence" class="h-2 bg-blue-500 rounded-md" style="width: 80%;"></div> 
+                <div id="pokemon-defence" class="h-2 bg-blue-500 rounded-md" style="width: 0%;"></div> 
             </div>
           </div>
         </div>

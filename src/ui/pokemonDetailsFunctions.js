@@ -28,4 +28,12 @@ export async function handleNameClick(event) {
 
   const clickedPokemonData = await getPokemonDetails(POKEMON_URL);
   addPokemonDetails(clickedPokemonData);
+  showPokemonSprite();
+}
+
+function showPokemonSprite() {
+  document.querySelector("#loading-sprite").classList.add("hidden");
+  document.querySelector("#loading-sprite").classList.remove("block");
+  document.querySelector("#pokemon-sprite").classList.add("block");
+  document.querySelector("#pokemon-sprite").classList.remove("hidden");
 }
