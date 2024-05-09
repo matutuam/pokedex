@@ -1,3 +1,4 @@
+import { getOffset, setOffset } from "../../config.js";
 import { removePreviousPokemonList } from "./removePreviousPokemonList.js";
 import { init } from "../index.js";
 
@@ -5,11 +6,14 @@ export function handleButtonClick(event) {
   const $clickedButton = event.target;
   removePreviousPokemonList();
 
+  let newOffset = getOffset();
+
   if ($clickedButton.id === "previous-button") {
-    window.offset -= 20;
+    newOffset -= 20;
   } else if ($clickedButton.id === "next-button") {
-    window.offset += 20;
+    newOffset += 20;
   }
 
+  setOffset(newOffset);
   init();
 }
