@@ -1,5 +1,10 @@
+import { getOffset, getLimit } from "../../config.js";
+
 export async function getPokemon() {
-  const API_URL = `https://pokeapi.co/api/v2/pokemon/?offset=${window.offset}&limit=${window.limit}`;
+  const offset = getOffset();
+  const limit = getLimit();
+
+  const API_URL = `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=${limit}`;
 
   return fetch(API_URL)
     .then((response) => response.json())
