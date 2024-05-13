@@ -12,7 +12,7 @@ const $nextButton = document.querySelector("#next-button");
 $nextButton.addEventListener("click", handleButtonClick);
 
 export async function init() {
-  const data = await getPokemon(limit, offset);
+  const data = await getPokemon();
   updatePokemonList(data);
 }
 
