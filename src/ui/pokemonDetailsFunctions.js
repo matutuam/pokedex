@@ -1,8 +1,9 @@
 import { getPokemonDetails } from "../api/apiCalls.js";
+import { Pokemon } from "../api/pokemon.js";
 
 function addPokemonDetails(clickedPokemonData) {
   const $pokemonSprite = document.querySelector("#pokemon-sprite");
-  $pokemonSprite.src = clickedPokemonData.sprites.front_default;
+  $pokemonSprite.src = clickedPokemonData.sprite;
 
   const $pokemonName = document.querySelector("#pokemon-name");
   $pokemonName.textContent =
@@ -13,13 +14,13 @@ function addPokemonDetails(clickedPokemonData) {
   $pokemonId.textContent = String(clickedPokemonData.id).padStart(4, "0");
 
   document.querySelector("#pokemon-hp").style =
-    `width: ${(clickedPokemonData.stats[0].base_stat / 255) * 100}%`;
+    `width: ${clickedPokemonData.statics.hp}%`;
 
   document.querySelector("#pokemon-attack").style =
-    `width: ${(clickedPokemonData.stats[1].base_stat / 190) * 100}%`;
+    `width: ${clickedPokemonData.statics.attack}%`;
 
   document.querySelector("#pokemon-defence").style =
-    `width: ${(clickedPokemonData.stats[2].base_stat / 250) * 100}%`;
+    `width: ${clickedPokemonData.statics.defence}%`;
 }
 
 export async function handleNameClick(event) {
@@ -27,7 +28,9 @@ export async function handleNameClick(event) {
   const POKEMON_URL = $clickedPokemon.id;
 
   const clickedPokemonData = await getPokemonDetails(POKEMON_URL);
-  addPokemonDetails(clickedPokemonData);
+  const pokemon = new Pokemon(clickedPokemonData);
+
+  addPokemonDetails(pokemon);
   showPokemonSprite();
 }
 
